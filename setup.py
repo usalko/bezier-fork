@@ -170,6 +170,7 @@ def setup():
             "Programming Language :: Python :: 3.9",
             "Programming Language :: Python :: 3.10",
             "Programming Language :: Python :: 3.11",
+            "Programming Language :: Python :: 3.12",
             "Programming Language :: Python :: Implementation :: CPython",
             "Programming Language :: Python :: Implementation :: PyPy",
         ],
@@ -190,11 +191,11 @@ def _check_python_version():
 
     major = sys.version_info.major
     minor = sys.version_info.minor
-    if (major, minor) in ((3, 9), (3, 10), (3, 11)):
+    if (major, minor) in ((3, 9), (3, 10), (3, 11), (3, 12)):
         return
 
     message = INVALID_VERSION_MESSAGE.format(
-        major=major, minor=minor, versions="3.9, 3.10 and 3.11"
+        major=major, minor=minor, versions="3.9, 3.10, 3.11, 3.12"
     )
     print(message, file=sys.stderr, end="")
     sys.exit(1)
